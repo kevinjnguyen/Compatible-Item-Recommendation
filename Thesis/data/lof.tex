@@ -1,0 +1,45 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.
+%
+%
+%  Original Author: Sean Zachary Roberson
+%  This version adapted for URS by Parasol lab.
+%  Adapted from version 3.16.10, which was last updated on 9/29/2016.
+%  URS adaptation last updated 1/9/2017.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                           LIST OF FIGURES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+
+\renewcommand{\cftloftitlefont}{\center\bf\large\MakeUppercase}
+
+\setlength{\cftbeforeloftitleskip}{-12pt} %% Positions the LOF title vertically to match the chapter titles
+\renewcommand{\cftafterloftitleskip}{12pt}
+
+
+\renewcommand{\cftafterloftitle}{%
+\\[4em]\mbox{}\hspace{2pt}FIGURE\hfill{\normalfont Page}\vskip\baselineskip}
+
+\begingroup
+
+
+\begin{center}
+\begin{singlespace}
+%% These values make the lof table entries appear double spaced between.
+\setlength{\cftbeforechapskip}{0.4cm}
+\setlength{\cftbeforesecskip}{0.30cm}
+\setlength{\cftbeforesubsecskip}{0.30cm}
+\setlength{\cftbeforefigskip}{0.4cm}
+\setlength{\cftbeforetabskip}{0.4cm}
+
+\listoffigures
+
+\end{singlespace}
+\end{center}
+
+\pagebreak{}

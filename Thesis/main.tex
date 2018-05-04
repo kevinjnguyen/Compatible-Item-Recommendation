@@ -1,0 +1,181 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.
+%
+%
+%  Original Author: Sean Zachary Roberson
+%  This version adapted for URS by Parasol lab.
+%  Adapted from version 3.16.10, which was last updated on 9/29/2016.
+%  URS adaptation last updated 1/9/2017.
+%\part{title}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{report}
+
+%These next lines change the font. Fixes for certain
+%fonts will be implemented in a future release.
+
+%Comment this line if you do not wish to use Times
+%New Roman. The font used will then be the LaTeX
+%default of Computer Modern.
+\usepackage{times}
+%\usepackage{cmbright}
+\usepackage[T1]{fontenc}
+
+%Do not change these settings. The geometry package
+%Adjusts the margins to those specified by the Thesis
+%Manual.
+\usepackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=1.25in,bmargin=1.25in,lmargin=1.4in,rmargin=1.15in}
+\usepackage[doublespacing]{setspace}
+\usepackage{packages/tocloft}
+\usepackage[rm, tiny, center, compact]{packages/titlesec}
+\usepackage{indentfirst}
+\usepackage{etoolbox}
+
+\usepackage{packages/tocvsec2}
+\usepackage[titletoc]{packages/appendix}
+\usepackage{packages/appendix}
+\usepackage{tamuconfig}
+
+\usepackage{rotating}
+
+%These are common AMS packages. Many LaTeX documents
+%have these packages declared in their preambles.
+\usepackage{amsmath, amsthm}
+
+%This package allows for the use of graphics in the
+%document.
+\usepackage{graphicx}
+
+%It is best practice to keep all your pictures in
+%one folder inside the main directory in which your
+%TeX file is kept. Here the folder is named "graphic."
+%Replace the name here with your folder's name, if needed.
+%The period is needed due to relative referencing.
+\graphicspath{ {./graphic/} }
+
+%If needed, this will allow you to add the word "Page"
+%to extra pages on your front matter lists.
+\usepackage{afterpage}
+
+%This is from the mdwtools package; it fixes some
+%footnote commands and allows you to have footnotes in
+%tables via the savenotes environment.
+\usepackage{footnote}
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+
+
+% Added to fix issues with pdf searching in some versions of LaTeX
+%\usepackage[T1]{fontenc}\usepackage{lmodern}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Hyperref setup below.  You should be able to get away with using uncommenting just the first line.
+%\usepackage[hidelinks]{hyperref}
+
+% if \usepackage[hidelinks]{hyperref} doesn't work try this.
+%\usepackage{hyperref}  % Hidelinks is an option that removes link visiability.  TAMU Thesis Offices prefers to not see the links. But often doesn't work.
+%
+%\hypersetup{
+%    colorlinks=true,
+%    linkcolor=black,
+%    citecolor=black,
+%    filecolor=black,
+%    urlcolor=black,
+%}
+%%%%%%%  End of hyperref setup.  One of these two options should work, but my motto with hyperref is when in doubt, comment it out!
+%%%%%%%%%  This hopefully fixes the problem with vertical spacing of section headings at the top of the page..  Commented out in 1.0.7
+% \preto\section{%
+% \ifnum\value{section}>0\addtocontents{toc}{\vskip-6pt}\fi
+% }
+% \preto\subsection{%
+% \ifnum\value{subsection}=0\addtocontents{toc}{\vskip-6pt}\fi
+% \ifnum\value{subsection}>0\addtocontents{toc}{\vskip-6pt}\fi
+% }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%The title of your document goes here.
+%Spacing may need to be adjusted if your title is long
+%and pushes the copyright off the page.
+\renewcommand{\title}{Compatible Item Recommendation}
+
+\newcommand{\abstracttitle}{Compatible Item Recommendation}
+
+\renewcommand{\author}{Kevin J Nguyen \MakeLowercase{and} Victoria Wei}
+
+%Your department name goes here.
+\newcommand{\department}{Computer Science}
+
+\newcommand{\program}{Undergraduate Research Scholar}
+
+\newcommand{\ursadvisor}{James Caverlee}
+\newcommand{\ursgradstudentadvisor}{Yin Zhang}
+\newcommand{\advisordepartment}{Computer Science and Engineering}
+
+% Doesn't change until next year.
+\newcommand{\ursmonth}{May}
+\newcommand{\ursyear}{2018}
+
+%\titleformat{\chapter}[display]
+%{\normalfont\bfseries\filcenter}{\chaptertitlename\
+%\thechapter}{14pt}{\fontsize{14pt}{12pt}}
+
+\include{data/titlepage} % This is simply a file that formats and adds your titlepage, please do not edit this unless you have a specific need. .
+
+\include{data/toc}  % This adds the table of contents, please do not edit this unless you have a specific need.
+\include{data/abstract}
+\include{data/dedication}
+\include{data/acknowledgements}
+\include{data/contributors}
+\include{data/introduction}
+\include{data/relatedworks}
+\include{data/chapter3}
+\include{data/chapter4}
+% \include{data/nomenclature}
+
+% \include{data/lof}  % This adds the list of figures, this is optional. To remove, add a comment '%' at the beggining of the line.
+% \include{data/lot}  % This adds the list of tables, this is optional. To remove, add a comment '%' at the beginning of the line.
+
+% \include{data/chapter1}
+% \include{data/chapter2}
+% \include{data/chapter4}
+
+%The next line is the format for inserting new sections.
+%Replace the name "newsection"  with the name of your
+%new section file.
+%\include{data/newsection}
+
+
+%fix spacing in bibliography, if any...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\let\oldbibitem\bibitem
+%\renewcommand{\bibitem}{\setlength{\itemsep}{0pt}\oldbibitem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%The bibliography style declared is the IEEE format. If
+%you require a different style, see the document
+%bibstyles.pdf included in this package. This file,
+%hosted by the University of Vienna, shows several
+%bibliography styles and examples of in-text citation
+%and a references page.
+
+\phantomsection
+\addcontentsline{toc}{chapter}{REFERENCES}
+
+\renewcommand{\bibname}{{\large\rm\bf REFERENCES}}
+%This file is a .bib database that contains the sources.
+\bibliography{data/myReference}
+\bibliographystyle{ieeetr}
+
+%This next line includes appendices. The file
+%appendix.tex contains commands pointing to
+%the appendix files; be sure to change these
+%pointers if you end up changing the filenames.
+%Leave this commented if you will not need
+%appendix material.
+
+% \include{data/appendix}
+
+\end{document}

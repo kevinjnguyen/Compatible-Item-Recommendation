@@ -1,0 +1,51 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.
+%
+%
+%  Original Author: Sean Zachary Roberson
+%  This version adapted for URS by Parasol lab.
+%  Adapted from version 3.16.10, which was last updated on 9/29/2016.
+%  URS adaptation last updated 1/9/2017.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                           SECTION II
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% \chapter{RELATED WORK}
+% We relate our work in the context of prior studies and implementations of (1) item-to-item recommendations, e.g. systems that generate item-to-item recommendations by analyzing the relationship between items; and (2) studies involving metric learning including those not for recommendation.
+
+% \section{Item-to-Item Recommendation}
+% The analysis of the relationship among items is fundamental to modern real-world recommender systems, e.g. to generate recommendations of new songs on \textit{Spotify}. Most recommender systems utilize methods based on collaborative filtering, e.g. counting the overlap between users who have liked both songs, as in \textit{Spotify's} own solution \cite{madathil}. Other approaches include the use of latent-factor approaches that aim to model user-item relationships with low-dimensional factors to find recommendations with close embeddings. The systems that are able to predict the item-to-item relationship based on \textit{content} are most important to our research as the systems are proposed to address specific topics.
+
+% Our work correlates with the co-purchase and co-browsing relationships using a dataset provided by \textit{Amazon} \cite{linden-smith-york}. We utilize previous works on these systems to provide quantitative results and compare our work against them. The main contribution of our work is to relax the model assumptions of current co-purchase and co-browsing systems to allow more complex relationships between items.
+
+% \section{Metric Learning}
+% The analysis of the relationship between objects is a vast topic that covers more topics than recommender systems. In modern learning, one is given a collection of relationships between items, and the goal is to identity a function that matches these relationships. The function must be able to generalize the relationship between objects and apply them to new unseen items to predict new relationships. The function is measured against valid data, and the metrics show how accurate the model can identify the relationships. The most developed and advanced learning methods are used to identify hidden variables or factors among items, through matrix-factorization or collaborative filtering. Again, our main goal is to relax the model assumption of current models and allow for more complex notions of `relatedness'. There are algorithms that work with non-metric learning of relationships, but to the extent of our knowledge do not scale well with larger sets of data.
+
+
+\chapter{RELATED WORK} 
+
+We relate our work in the context of prior studies and implementations of (1) item-to-item recommendations, e.g. systems that generate item-to-item recommendations by analyzing the relationship between items; (2) studies involving metric learning to build relationships between different sets of items; and (3) matrix factorization.
+
+\section{Item-to-Item Recommendation}
+
+The analysis of the relationship among items is fundamental to modern real-world recommender systems, e.g. to generate recommendations of new songs on \textit{Spotify}. As such, the closest systems to the compatibility recommender system we are proposing above are content-based recommender systems \cite{lew-sebe-djeraba-jain,adomavicius-tuzhilin} which attempt to model the user's preference toward items utilizing a variety of different features while using a similarity function, such as Pearson similarity \cite{melville}, cosine-based similarity \cite{deshpande}, and conditional probability-based similarity \cite{karypis}. These systems typically analyze the metadata from the user's previous activities and content. In comparison, other recommender systems utilize collaborative recommendation approaches, e.g. counting the overlap between users who have liked both songs, as in \textit{Spotify's} own solution \cite{madathil}. This type of recommendation allows the system to recommend items based off of similar user preferences and ratings, but requires a plethora of data in order to function effectively. In addition, item recommendation systems that utilize both content-based and collaborative techniques haven't been used to address the sparsity of data available and the cold-start problem (where products are invisible to the recommender system due to newness of the item) \cite{adomavicius-tuzhilin}. Other approaches for item-to-item recommendation incorporate additional features, such as images for fashion recommendation and phrase-level sentiment analysis.
+
+The methods above determine the similarity between objects. In contrast, more research has been focused on detecting relationships between items that substitute or complement one another \cite{li-liu-huag}. For example, \cite{yin} focuses on the analysis of also-bought products and bought-together products to create compatibility relationships. \textit{Murillo et al.} analyzed photos of groups of people in social media to identify which groups of people are more likely to socialize, thus providing similarity distance measure between images \cite{urban-tribes}. \cite{ricci} provides more details on many of these types of recommender systems and challenges faced in this domain. Finally, \cite{adomavicius-tuzhilin} provides next-generation approaches on how to improve item recommendation. Our model provides a solution to many of these next-generation approaches. 
+
+Unlike content-based recommender systems or collaborative filtering, our recommender system analyzes the content of items individually in a dataset and maps each item with a compatibility relationship to another item through entities defined by our definition of compatibility. Therefore, our recommender system does not need the preferences of other users and does not require the domain knowledge that content-based recommendations are derived from.
+
+\section{Metric Learning}
+The analysis of the relationship between objects is a vast topic that covers more domains than just recommender systems. In modern learning, one is given a collection of relationships between items, and the goal is to identify a function that matches these relationships. The function must be able to generalize the relationship between objects and apply them to new unseen items to predict new relationships. The function is measured against valid data, and the metrics show how accurate the model can identify the relationships created. The most developed and advanced learning methods are used to identify hidden variables or factors among items. This can be done through matrix-factorization or collaborative filtering. 
+
+Utilizing metric learning, our main goal is to relax the model assumptions that current models have and allow for more complex notions of `relatedness'. There are algorithms that work with non-metric learning of relationships, but to the extent of our knowledge do not scale well with larger sets of data.
+
+\section{Matrix Factorization}
+Matrix Factorization is a concept used in recommendation systems that recommends items to users based on previous users and their rating patterns for specific items \cite{koren,koren-2}. Based on these rating patterns, higher positive ratings for items corresponding to users and their existing rating patterns will show a user's interest in that item and similar items. This will allow recommendation systems to detect what users will rate future items and whether or not such items should be recommended to the user \cite{koren,koren-2}. 
+
+Matrix Factorization is just one of the methods for recommending items. However, in the world of compatibility, matrix factorization solely is unable to solve many of the challenges that compatibility presents. Matrix factorization shows user interest based on previous sentimental ratings, but this doesn't necessarily mean the items that the user rates positively are in any way compatible with each other. Our thesis aims to not only improve user interest but also increase existing compatibility nature between items.
+

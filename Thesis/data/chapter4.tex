@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.
+%
+%
+%  Original Author: Sean Zachary Roberson
+%  This version adapted for URS by Parasol lab.
+%  Adapted from version 3.16.10, which was last updated on 9/29/2016.
+%  URS adaptation last updated 1/9/2017.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                           SECTION IV
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{SUMMARY AND CONCLUSIONS \label{cha:Summary}}
+
+\section{Results}
+In order to qualitatively test our compatibility recommender system, we randomly selected 7 products from the dataset and analyzed the compatibility of the recommendations returned from four models: random selection, baseline, also-bought, and our compatibility model. For each model, we experimented with 5 recommendations for each product, and we determined if each product was compatible with the other products or not.
+
+
+\subsection{Random Selection Model}
+The random selection model divided the Cell Phone \& Accessories into a uniform distribution, allowing each product to have an equal chance of being recommended. Due to the large dataset and variety of products offered by Amazon, we expect very few to none randomly selected compatible items.
+
+\subsection{Baseline Model}
+The baseline model is a machine learned model created with logistic regression to recommend compatible items.
+
+\subsection{Also Bought Model}
+The Amazon dataset includes metadata about purchasing information such as `products also purchased with $x$'. We include this model in comparison to our compatibility model as this is the standard that Amazon uses to currently recommend compatible items to users.
+
+\subsection{Compatibility Model}
+The compatibility model utilizes our new definition of compatibility to recommend compatible items to users.
+
+\subsection{Data}
+Figure 4.1 shows the results from our experiments.
+\begin{figure}[h!]
+    \begin{tabular}{ |p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}| }
+     \hline
+     \multicolumn{5}{|c|}{Compatible Item Recommendation Accuracy} \\
+     \hline
+     Product & Random & Baseline & Also-Bought & Compatibility \\
+     \hline
+     1 & 0\% & 0\% & 0\% & 80\% \\
+     2 & 0\% & 0\% & 0\% & 0\% \\
+     3 & 20\% & 60\% & 50\% & 100\% \\
+     4 & 0\% & 0\% & 0\% & 0\% \\
+     5 & 0\% & 0\% & 0\% & 0\% \\
+     6 & 0\% & 0\% & 0\% & 0\% \\
+     7 & 20\% & 0\% & 60\% & 100\% \\
+     \hline
+     Avg & 5.71\% & 8.57\% & 15.71\% & 40\% \\
+     \hline
+    \end{tabular}
+    \caption{Compatible item recommendation accuracy with random, baseline, also-bought, and our compatibility models; tested for compatibility against 7 randomly selected products.}
+\end{figure}
+
+\section{Analysis}
+Overall, our model had an overall higher average accuracy when recommending compatible items compared to the other models. More specifically, our model beats the baseline state-of-the-art model by 31.43\% and the also-bought model by 24.29\%.  Compared to the random model, the compatibility model does significantly better (34.29\%). These numbers are expected because out of all the products in the dataset, only roughly 1\% are compatible with the actual product. Therefore the probability of finding compatible items with that queried product is very low.
+
+\section{Discussion and Conclusion}
+In conclusion, we utilized our definition of compatibility to create a new recommender system that leverages the human notion of compatibility to recommend items to users while capturing the complex relationship of compatibility through a mixture of metadata, natural language, and entity mappings. While there are many other existing methods for compatible item recommendation that suffer from limitations such as sparsity in review data or the cold-start problem (a recommender system cannot draw any inferences for users or items due to lack of sufficient information), our implementation allows us to avoid and relax these constraints. 
+
+\section{Challenges}
+There are millions of items but only a small fraction actually mention compatibility. Our model further improves these notions of compatibility by defining the relation between products, whereas the small fraction that mention compatibility do so in a generic sense. As we have mentioned earlier, another difficulty is out of all products offered, at max only 1\% of the products are compatible items with the queried product. Finding this 1\% of compatible products is challenging in a dataset of millions.
+
+Another main challenge to note here is relaxing the constraint of the cold start problem. The cold start problem is the problem that occurs when a new product is introduced. Because traditional recommender systems recommend compatible items based on co-purchasing, this new product has a very low chance of having any recommendations associated with it. This new product also has a very low chance of being recommended from other product selections. Our definition solves the cold start problem by not relying on co-purchasing of products. Therefore, the cold start problem doesn't affect how we determine or define our definition of compatibility.
+
+Sparsity in review data is also a very common challenge faced by many other compatibility recommender systems. However, our model also relaxes this problem by not focusing our attention to users, actions, and behaviors based on the querying user but on the meaning of the product itself and not based on other users and their habits. 
+
+\section{Further Study}
+Currently, we have a compatibility classification model for over 340,000 products. In order to broaden the scope of our classifier, we will look further into analyzing the relationships of compatibility for other datasets and see if these relationships can be learned through machine learning and neural methods. We can also improve our classifier by researching more in depth about natural language and creating our own natural language platform for text recognition. Finally, we could also incorporate matrix factorization along with our compatibility model to even further improve user and compatibility interests. We believe that we can do better to improve our accuracy and continue to make our definition of compatibility stronger in the future. 

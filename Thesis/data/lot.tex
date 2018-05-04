@@ -1,0 +1,47 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.
+%
+%
+%  Original Author: Sean Zachary Roberson
+%  This version adapted for URS by Parasol lab.
+%  Adapted from version 3.16.10, which was last updated on 9/29/2016.
+%  URS adaptation last updated 1/9/2017.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                           lIST OF TABLES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\phantomsection
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+
+\renewcommand{\cftlottitlefont}{\center\bf\large\MakeUppercase}
+
+\setlength{\cftbeforelottitleskip}{-12pt} %% Positions the LOT title vertically to match the chapter titles
+
+%Note that the similar parameter in the LOF is 12pt; this
+%is intentional to make the spacing between the headers
+%and the first entry look consistent.
+\renewcommand{\cftafterlottitleskip}{1pt}
+
+
+\renewcommand{\cftafterlottitle}{%
+\\[4em]\mbox{}\hspace{2pt}TABLE\hfill{\normalfont Page}\vskip\baselineskip}
+
+\begin{center}
+\begin{singlespace}
+
+%% These values make the lot table entries appear double spaced between.
+\setlength{\cftbeforechapskip}{0.4cm}
+\setlength{\cftbeforesecskip}{0.30cm}
+\setlength{\cftbeforesubsecskip}{0.30cm}
+\setlength{\cftbeforefigskip}{0.4cm}
+\setlength{\cftbeforetabskip}{0.4cm}
+
+\listoftables
+
+\end{singlespace}
+\end{center}
+\endgroup
+\pagebreak{}  % Need this for the pagenumbering to be correct.

@@ -1,0 +1,41 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.
+%
+%
+%  Original Author: Sean Zachary Roberson
+%  This version adapted for URS by Parasol lab.
+%  Adapted from version 3.16.10, which was last updated on 9/29/2016.
+%  URS adaptation last updated 1/9/2017.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       TABLE OF CONTENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% single-space sections in Table of Contents  - commented in version 1.7
+%\renewcommand{\cftsecafterpnum}{\vskip0.5\baselineskip}
+%\renewcommand{\cftsubsecafterpnum}{\vskip0.5\baselineskip}
+%\renewcommand{\cftsubsubsecafterpnum}{\vskip0.5\baselineskip}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection
+\addcontentsline{toc}{chapter}{TABLE OF CONTENTS}  
+
+\begin{singlespace}
+\renewcommand\contentsname{\normalfont} {\centerline{TABLE OF CONTENTS}}
+
+%\setcounter{tocdepth}{4} % This puts \subsubsection[]{×} in your List of Tables.  The default is 3.
+
+
+%%%%%%%%%%%%%  Adds Page above the page number in TOC
+\setlength{\cftaftertoctitleskip}{1em}
+\renewcommand{\cftaftertoctitle}{%
+\hfill{\normalfont {Page}\par}}
+
+
+\tableofcontents
+
+%\addtocontents{toc}{\protect\afterpage{~\hfill\normalfont{Page}\par\medskip}}
+\end{singlespace}
+
+\pagebreak{}
