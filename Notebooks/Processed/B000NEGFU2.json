@@ -1,0 +1,1 @@
+"{\n  \"entities\": [\n    {\n      \"name\": \"Bike mount\",\n      \"type\": \"OTHER\",\n      \"metadata\": {},\n      \"salience\": 1,\n      \"mentions\": [\n        {\n          \"text\": {\n            \"content\": \"Bike mount\",\n            \"beginOffset\": 0\n          },\n          \"type\": \"COMMON\"\n        }\n      ]\n    }\n  ],\n  \"language\": \"en\"\n}\n"
